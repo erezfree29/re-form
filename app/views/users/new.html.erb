@@ -1,7 +1,10 @@
- <form action="/user/new" accept-charset="UTF-8" method="post"><br>
+ <form action="/users" accept-charset="UTF-8" method="post"><br>
     <label>username</label><br>
-    <input type="text"><br><br>
+    <input type="text" name="username"><br><br>
     <label>email</label><br>
-    <input type="email"><br><br>
+    <input type="email" name="email"><br><br>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="submit" value="Submit This Form">
   </form>
+
+  
