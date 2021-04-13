@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_214723) do
+ActiveRecord::Schema.define(version: 2021_04_13_211116) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
-    t.string "passowrd"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
