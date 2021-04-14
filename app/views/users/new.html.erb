@@ -1,12 +1,51 @@
-<!--  <form action="/users" accept-charset="UTF-8" method="post"><br>
+
+
+
+
+
+
+ <!--
+ <form action="/users" accept-charset="UTF-8" method="post"><br>
     <label>username</label><br>
     <input type="text" name="username"><br><br>
     <label>email</label><br>
     <input type="email" name="email"><br><br>
      <label>password</label><br>
     <input type="password" name="password"><br><br>
-     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="submit" value="Submit This Form">
   </form>
+  —>
 
--->
+ <%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :username %><br>
+    <%= form.text_field :username%>
+    <% @user.errors.full_messages_for(:user).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+     <%= form.text_field :email%><br>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%=form.label :password %><br>
+    <%= form.text_field :password %><br>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+      <%end%>  
+  </div>
+  <div><br>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+
+
+  
