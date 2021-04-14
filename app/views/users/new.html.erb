@@ -1,27 +1,8 @@
-<<<<<<< Updated upstream
-
- 
- <!--
- <form action="/users" accept-charset="UTF-8" method="post"><br>
-    <label>username</label><br>
-    <input type="text" name="username"><br><br>
-    <label>email</label><br>
-    <input type="email" name="email"><br><br>
-     <label>password</label><br>
-    <input type="password" name="password"><br><br>
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="submit" value="Submit This Form">
-  </form>
-  —>
-
- <%= form_with model: @user do |form| %>
-=======
 <%= form_with model: @user do |form| %>
->>>>>>> Stashed changes
   <div>
     <%= form.label :username %><br>
     <%= form.text_field :username%>
-    <% @user.errors.full_messages_for(:username).each do |message| %>
+    <% @user.errors.full_messages_for(:user).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -66,5 +47,3 @@
    <%= text_field_tag :'user[password]' %><br>
      <%= submit_tag "Create User" %><br>
      <% end %>
-
-  
